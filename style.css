@@ -1,0 +1,39 @@
+html{
+    background-image:url(./src/tear.png);
+    
+}
+
+.container
+{
+    width: 500px;
+    height: 600px;
+    background-color: #172435;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartao-login{
+    width: 450px;
+    height: 550px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+form{
+    margin: 20%;
+    padding: 50px;
+}
+
+input{
+    background-color: #213045;
+    border-radius: 5px ;
+    width: 230px;
+    height: 30px;
+    border-style: none;
+}
