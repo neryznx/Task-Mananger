@@ -1,39 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pg-cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Cadastro</title>
 </head>
 <body>
 
-    <div class="botao-voltar">
-        <button>Voltar ao Login</button>
-    </div>
+    <a href="index.html" class="botao-voltar">&larr; Voltar ao Login</a>
 
     <div class="container-cadastro">
         <div class="cartao-cadastro">
-            <h1>Cadastro de Novo Colaborador</h1>
+            <h1 >Cadastro de Novo Colaborador</h1>
             <p>Preencha os dados para criar um novo usuário</p>
-            <form action="">
-                <label for="nome">Nome Completo</label>
-                <input type="text" placeholder="Digite seu Nome completo" name="nome" id="nome">
-                
-                <label for="nomeLogin">Nome de Usuário (para login)</label>
-                <input type="text" placeholder="Digite seu usuário para login" name="nomeLogin" id="nomeLogin">
-
-                <label for="senha">Criar Senha</label>
-                <input type="password" placeholder="Digite sua senha" name="senha" id="senha">
-
-                <label for="funcao">Função</label>
-                <input type="text" name="funcao" id="funcao">
-            </form>
             
-            <button>Cancelar</button>
-            <button>Cadastrar</button>
-            <div href="task.html">Task</div>
+            <form action="">
+                <div class="inputs">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" placeholder="Digite o nome completo" name="nome" id="nome">
+                </div>
+                
+                <div class="inputs">
+                    <label for="nomeLogin">Nome de Usuário (para login)</label>
+                    <input type="text" placeholder="Digite o nome de usuário" name="nomeLogin" id="nomeLogin">
+                </div>
 
+                <div class="inputs">
+                    <label for="senha">Criar Senha</label>
+                    <input type="password" placeholder="Digite a senha" name="senha" id="senha">
+                </div>
+
+                <div class="inputs">
+                    <label for="funcao">Função</label>
+                    <select name="funcao" id="funcao">
+                        <option value="" disabled selected>Selecione a função</option>
+                        <option value="dev">Programador (Acesso a Desenvolvimento/Ajuste)</option>
+                        <option value="designer">Técnico (Acesso a Assistência Técnica)</option>
+                        <option value="gerente">Administrador (Acesso Total)</option>
+                    </select>
+                </div>
+
+                <div class="botoes-acao">
+                    <button type="button" class="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-cadastrar">Cadastrar</button>
+                </div>
+            </form>
         </div>
     </div>
     

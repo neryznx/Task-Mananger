@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111827;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.botao-voltar {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    color: #9CA3AF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.botao-voltar:hover {
+    color: #F9FAFB;
+}
+
+
+.container-cadastro {
+    width: 100%;
+    max-width: 450px; 
+}
+
+.cartao-cadastro {
+    background-color: #172435; 
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+.cartao-cadastro p {
+    color: #9CA3AF;
+    margin-bottom: 2rem;
+}
+
+
+.inputs {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    color: #D1D5DB; 
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #374151; 
+    border: 1px solid #4B5563; 
+    border-radius: 0.5rem;
+    color: #F9FAFB;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+input::placeholder {
+    color: #9CA3AF; 
+}
+
+
+select {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+select:invalid {
+    color: #9CA3AF;
+}
+
+
+
+.botoes-acao {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 1rem; 
+    margin-top: 2rem;
+}
+
+button {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+.btn-cancelar {
+    background-color: #374151;
+    color: #F9FAFB;
+    border: 1px solid #4B5563;
+}
+
+.btn-cadastrar {
+    background-color: #F97316;
+    color: #FFFFFF;
+}
