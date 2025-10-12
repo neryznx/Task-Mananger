@@ -1,0 +1,54 @@
+html{
+    background-image:url(./src/tear.png);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container
+{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    
+    
+    
+}
+
+.cartao-login{
+    width: 500px;
+    height: 600px;
+    background-color: #172435;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+form{
+    padding: 50px;
+}
+
+
+
+input{
+    background-color: #213045;
+    border-radius: 5px ;
+    width: 400px;
+    height: 40px;
+    border-style: none;
+    
+}
+
+a{
+    color: #f97415;
+}
+
+button{
+    background-color: #f97415;
+    color: #FFF;
+    border-radius: 5px;
+    width: 400px;
+    height: 70px;
+}
