@@ -1,11 +1,40 @@
 html{
-    background-image:url(./src/tear.png);
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
 }
+/* Estilos globais para centralizar o conteúdo */
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden; 
+}
 
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('./src/tear.png'); 
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(30%);
+    transform: scale(1.05); 
+    z-index: -1;
+}
+
+.background-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(215deg 45% 12% / 90%); 
+}
 .container
 {
     width: 100%;
@@ -21,6 +50,7 @@ html{
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
+    color: #D1D5DB
 }
 
 form{
@@ -30,12 +60,25 @@ form{
 
 
 input{
-    background-color: #213045;
+    background-color: #374151;
     border-radius: 5px ;
+    border: 1px solid #4B5563;
     width: 400px;
     height: 40px;
-    border-style: none;
-    
+    margin-bottom: 1.5rem; 
+    padding: 0.2rem 1rem;  
+    color: #F9FAFB;
+}
+
+input::placeholder {
+    color: #9CA3AF; 
+
+}
+label {
+    display: block;
+    color: #D1D5DB; 
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 a{
@@ -49,8 +92,13 @@ button{
     color: #FFF;
     border-radius: 5px;
     border-style: none;
-    width: 400px;
+    width: 27.2rem;
     height: 
     50px;
-    margin-top: 100px;
+    
+}
+
+p{
+    color: #9CA3AF;
+    margin-top: -10px;
 }
