@@ -1,0 +1,10 @@
+Flask==2.1.0
+flask_sqlalchemy
+werkzeug==2.0.2
+sqlalchemy==1.4.49
+python-dotenv
+gunicorn
+cryptography
+Flask-JWT-Extended
+PyJWT 
+psycopg2-binary

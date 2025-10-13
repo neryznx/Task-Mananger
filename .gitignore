@@ -1,0 +1,20 @@
+# Arquivos de Segredo
+.env
+*.env.local
+
+# Dependências do Python (Backend)
+__pycache__/
+*.pyc
+/venv/
+/env/
+
+# Dependências do Node (Frontend)
+/frontend/node_modules/
+/frontend/dist/
+.pnp
+.pnp.js
+
+# Arquivos de IDE e SO
+.DS_Store
+.vscode/
+.idea/

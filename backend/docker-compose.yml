@@ -1,0 +1,46 @@
+# docker-compose.yml (Versão Completa e Recomendada)
+
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    env_file:
+      - ./.env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      # Monta o script para criar o banco de dados de teste na inicialização
+      - ./init-db:/docker-entrypoint-initdb.d
+    # Verifica se o serviço do MySQL está realmente pronto para aceitar conexões
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "${DB_USER}", "-p${DB_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: gestao_api
+    restart: always
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./.env
+    # Garante que a API só inicie DEPOIS que o banco de dados estiver saudável
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/app
+
+volumes:
+  mysql-data:
