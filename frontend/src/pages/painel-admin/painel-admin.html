@@ -7,36 +7,58 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1>Painel do Administrador</h1>
+    <div class="pgn">    
+        <header>
+            <h1>Painel do Administrador</h1>
 
-        <button class="novo-chamado">+ Abrir Novo Chamado</button>
-    </header>
+            <button class="novo-chamado">+ Abrir Novo Chamado</button>
+        </header>
 
-    <div class="container">
-        <div class="prazo"><p>Chamados dentro do Prazo</p></div>
-        <div class="atraso"><p>Chamados com Atraso</p></div>
-        <div class="tempo"><p>Média de Tempo (Geral) </p></div>
-        <div class="colaborador"><p>Média por Colaborador</p></div>
+            <div class="container">
+                <div class="prazo"><p>Chamados dentro do Prazo</p>
+                    <svg  id="prazo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                </div>
+
+                
+                <div class="atraso"><p>Chamados com Atraso</p>
+                    <svg  id="atraso" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                    </svg>
+                </div>
+                
+                <div class="tempo"><p>Média de Tempo (Geral) </p>
+                    <svg  id="tempo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                    </svg>
+                </div>
+
+                <div class="colaborador"><p>Média por Colaborador</p>
+                    <svg id="colaborador"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <div class="tabela-chamados">
+                <table>
+                    <caption>Chamados Abertos</caption>
+
+                    <tr>
+                        <th>N°</th>
+                        <th>Cliente</th>
+                        <th>Tipo de Solicitação</th>
+                        <th>Responsável</th>
+                        <th>Data de Abertura</th>
+                        <th>Prazo Limite</th>
+                        <th>Status</th>
+                    </tr>
+
+
+                </table>
+            </div>
     </div>
-
-    <div class="tabela-chamados">
-        <table>
-            <caption>Chamados Abertos</caption>
-
-            <tr>
-                <th>N°</th>
-                <th>Cliente</th>
-                <th>Tipo de Solicitação</th>
-                <th>Responsável</th>
-                <th>Data de Abertura</th>
-                <th>Prazo Limite</th>
-                <th>Status</th>
-            </tr>
-
-
-        </table>
-    </div>
-    
 </body>
 </html>
