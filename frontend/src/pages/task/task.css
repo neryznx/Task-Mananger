@@ -1,0 +1,265 @@
+/* --- Configurações Globais e Variáveis --- */
+:root {
+    --bg-dark: #111C2C;
+    --bg-panel: #172436;
+    --text-primary: #E0E0E0;
+    --text-secondary: #A0A0A0;
+    --accent-orange: #FF7A00;
+    --urgent-tag-bg: #ffeadd;
+    --urgent-tag-text: #FF7A00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    overflow: hidden; /* Evita scroll na página inteira */
+}
+
+/* --- Estrutura Principal com GRID --- */
+.task-manager-container {
+    display: grid;
+    grid-template-columns: 320px 1fr; /* Coluna esquerda fixa, direita flexível */
+    height: 100vh;
+}
+
+/* --- Painel da Esquerda (Lista de Tarefas) --- */
+.task-list-panel {
+    background-color: var(--bg-panel);
+    padding: 24px;
+    border-right: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.task-list-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.task-list-header p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+#task-list {
+    overflow-y: auto; /* Adiciona scroll se a lista for longa */
+    flex-grow: 1;
+}
+
+.task-card {
+    background-color: transparent; /* Fundo inicial transparente */
+    border: 1px solid #4a4a4a;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Adiciona transição para a borda */
+}
+
+/* Efeito HOVER: Escurece levemente o fundo ao passar o mouse */
+.task-card:hover {
+    background-color: #111C2C; /* Um tom sutilmente mais escuro que o painel */
+}
+
+/* Efeito ACTIVE (Clicado): Corresponde à sua imagem */
+.task-card.active {
+    background-color: var(--bg-dark); /* Fundo mais escuro */
+    border-color: var(--accent-orange); /* Borda laranja */
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+}
+
+.urgent-tag {
+    background-color: var(--urgent-tag-bg);
+    color: var(--urgent-tag-text);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.task-type {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+/* --- Painel da Direita (Detalhes da Tarefa) --- */
+.task-detail-panel {
+    padding: 32px 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #444;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.detail-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+}
+
+.detail-header p {
+    color: var(--text-secondary);
+}
+
+.due-date {
+    text-align: right;
+}
+
+.due-date span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.due-date strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.detail-content {
+    flex-grow: 1;
+}
+
+.info-item {
+    margin-bottom: 24px;
+}
+
+.info-item label, .info-item-full label {
+    display: block;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.info-item span {
+    font-size: 1.1rem;
+}
+
+.description-box {
+    background-color: var(--bg-panel);
+    border-radius: 8px;
+    padding: 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.detail-footer {
+    margin-top: auto; /* Empurra o footer para o final */
+    text-align: right;
+}
+
+.btn-primary {
+    background-color: var(--accent-orange);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #e66e00;
+}
+
+.btn-primary svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- Estilos de Status para o Tempo --- */
+
+/* Cor padrão para o tempo (quando não há status especial) */
+.time-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary); /* Cor cinza padrão */
+    font-size: 0.9rem;
+}
+
+/* Cor VERDE para tempo DENTRO DO PRAZO */
+.time-info.status-normal {
+    color: #2ECC71; /* Verde */
+}
+
+/* Cor AMARELA para tempo URGENTE */
+.time-info.status-urgent {
+    color: #F1C40F; /* Amarelo */
+}
+
+/* Cor VERMELHA para tempo ESTOURADO */
+.time-info.status-overdue {
+    color: #E74C3C; /* Vermelho */
+}
+
+/* --- Estilos Adicionais para Botões --- */
+
+/* Ajusta o footer para alinhar múltiplos botões */
+.detail-footer {
+    margin-top: auto; /* Empurra o footer para o final */
+    display: flex; /* Usa flexbox para alinhar os botões */
+    justify-content: flex-end; /* Alinha os botões à direita */
+    gap: 12px; /* Espaçamento entre os botões */
+}
+
+/* Estilo para o botão secundário (Pausar/Continuar) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--text-secondary); /* Borda cinza */
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-panel);
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
